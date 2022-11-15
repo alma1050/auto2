@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('autok', function (Blueprint $table) {
-            $table->id("a_id");
-            $table->string("rendszam",10);
-            $table->string("tipus",20);
-            $table->string("szin",30);
-
+        Schema::create('baleset', function (Blueprint $table) {
+            $table->id("b_id");
+            $table->dataTime("idopont");
+            $table->string("leiras",1000);
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autok');
+        Schema::dropIfExists('baleset');
     }
 };
